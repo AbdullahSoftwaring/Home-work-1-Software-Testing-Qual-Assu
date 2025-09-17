@@ -1,0 +1,38 @@
+Bug Report from Bugzilla
+Bug ID: 1766849
+Title: Firefox snap crashed with X Window System error 'BadValue'
+Status: NEW (Open)
+Product: Core
+Component: Widget: Gtk
+Version: Firefox 100
+Platform: Desktop Linux
+Operating System: Ubuntu 22.04
+Reporter: Olivier Tilloy
+Date Reported: 3 years ago (around 2021)
+Priority: P1
+Severity: --
+Type: Defect
+Description:
+The user reported that Firefox snap crashed 3 times while running from the candidate channel (100.0-1) in a Wayland session on Ubuntu 22.04. The crashes did not trigger the crash reporter.
+Error Message:
+(firefox:80147): Gdk-WARNING **: 21:44:48.720: The program 'firefox' received an X Window System error.
+This probably reflects a bug in the program.
+The error was 'BadValue'.
+(Details: serial 980422 error_code 2 request_code 53 (core protocol) minor_code 0)
+Steps to Reproduce:
+
+Install Firefox snap from candidate channel
+Run Firefox in Wayland session on Ubuntu 22.04
+Use Firefox normally (user was watching YouTube videos)
+Crash occurs randomly
+
+Expected Result:
+Firefox should run normally without crashing
+Actual Result:
+Firefox crashes with X Window System error 'BadValue' and all Firefox windows close abruptly
+Additional Information:
+
+The issue only occurs when running with Wayland window protocol
+No crash reporter appears when the crash happens
+The user confirmed crashes happened while watching YouTube videos
+Multiple users have reported similar issues in the comments
